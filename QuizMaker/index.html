@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Quiz Maker</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div id="home">
+        <h1>Welcome to Online Quiz Maker</h1>
+        <button onclick="showLogin()">Login</button>
+        <button onclick="showRegister()">Register</button>
+        <button onclick="showQuizList()">Take a Quiz</button>
+        <button onclick="showCreateQuiz()">Create a Quiz</button>
+      </div>
+      <div id="login" class="hidden">
+        <h2>Login</h2>
+        <form onsubmit="login(event)">
+          <input
+            type="text"
+            id="loginUsername"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div id="register" class="hidden">
+        <h2>Register</h2>
+        <form onsubmit="register(event)">
+          <input
+            type="text"
+            id="registerUsername"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Register</button>
+        </form>
+      </div>
+      <div id="createQuiz" class="hidden">
+        <h2>Create a Quiz</h2>
+        <form onsubmit="createQuiz(event)">
+          <input type="text" id="quizTitle" placeholder="Quiz Title" required />
+          <div id="questionsContainer"></div>
+          <button type="button" onclick="addQuestion()">Add Question</button>
+          <button type="submit">Create Quiz</button>
+        </form>
+      </div>
+      <div id="quizList" class="hidden">
+        <h2>Available Quizzes</h2>
+        <div id="quizListContainer"></div>
+      </div>
+      <div id="takeQuiz" class="hidden">
+        <h2 id="quizTitleDisplay"></h2>
+        <div id="quizContainer"></div>
+      </div>
+      <div id="quizResult" class="hidden">
+        <h2>Quiz Results</h2>
+        <div id="resultContainer"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
